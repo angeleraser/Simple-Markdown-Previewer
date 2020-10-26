@@ -1,0 +1,10 @@
+/* Base styles  */
+@import "./base/reset.min.css";
+@import "./base/variables.css";
+
+/* Utils */
+@import "./utils/utils.css";
+
+/* Components */
+@import "./components/editor.css";
+@import "./components/preview.css";

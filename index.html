@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.2/marked.min.js"></script>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"
+      integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://use.fontawesome.com/bba0855fd5.js"></script>
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Simple Markdown Previewer</title>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Editor  -->
+      <section class="container editor">
+        <header>
+          <span> <i class="fa fa-pencil-square-o"></i>Editor</span>
+          <button id="resize-editor"><i class="fa fa-arrows-alt"></i></button>
+        </header>
+        <textarea
+          placeholder="Type markdown text..."
+          class="content-area"
+          id="editor"
+        >
+ # Welcome to myMarkdown Previewer!
+
+## This is a sub-heading
+### And here's some other cool stuff:
+
+Heres some code, `<div></div>`, between 2 backticks.
+
+```
+// this is multi-line code:
+
+function anotherExample(firstLine, lastLine) {
+  if (firstLine == '```' && lastLine == '```') {
+    return multiLineCode;
+  }
+}
+```
+
+You can also make text **bold**... whoa!
+Or _italic_.
+Or... wait for it... **_both!_**
+And feel free to go crazy ~~crossing stuff out~~.
+
+There's also [links](https://www.freecodecamp.com), and
+> Block Quotes!
+
+And if you want to get really crazy, even tables:
+
+Wild Header | Crazy Header | Another Header?
+------------ | ------------- | -------------
+Your content can | be here, and it | can be here....
+And here. | Okay. | I think we get it.
+
+- And of course there are lists.
+  - Some are bulleted.
+     - With different indentation levels.
+        - That look like this.
+
+
+1. And there are numbererd lists too.
+1. Use just 1s if you want!
+
+        </textarea>
+      </section>
+      <!-- Preview  -->
+      <section class="container preview">
+        <header>
+          <span> <i class="fa fa-television"></i>Preview</span>
+          <button id="resize-preview"><i class="fa fa-arrows-alt"></i></button>
+        </header>
+        <div class="content-area markdown-body" id="preview"></div>
+      </section>
+      <div class="header">
+        <h1>
+          Simple Markdown <br />
+          Previewer
+        </h1>
+        <p>By <a href="https://twitter.com/angeleraser">@angeleraser</a></p>
+      </div>
+    </div>
+    <script type="module" src="./js/store/store.js"></script>
+    <script type="module" src="./js/reducers/reducers.js"></script>
+    <script type="module" src="./js/types/types.js"></script>
+    <script type="module" src="./js/components/Editor.js"></script>
+    <script type="module" src="./js/components/Preview.js"></script>
+  </body>
+</html>

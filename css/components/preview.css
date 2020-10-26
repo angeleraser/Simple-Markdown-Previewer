@@ -1,0 +1,7 @@
+.preview {
+  max-width: 680px;
+}
+
+.preview .content-area {
+  background-color: var(--primary-white);
+}
